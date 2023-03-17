@@ -12,6 +12,9 @@ export const generateItems = (itemsContainer: HTMLDivElement) => {
                 let spriteCell = document.createElement("canvas");      
                 spriteCell.width = 24;
                 spriteCell.height = 24;
+                spriteCell.style.marginLeft = "5px";
+                spriteCell.style.marginBottom = "5px";
+                spriteCell.style.border = "1px dashed white";
                 // spriteCell.style.width = '48px';    
                 // spriteCell.style.height = '48px';                    
                 itemsContainer.append(spriteCell);
