@@ -1,17 +1,19 @@
-export const generateWorkArea = (workAreaContainer: HTMLDivElement) => {
+import Settings from "../../settings";
+import { SelectedStore } from "../../store/selectedStore";
+import { generateCell } from "./generateCell";
 
-    for(let row: number = 0; row < 20; row++){
-        for(let column: number = 0; column < 32; column++){
-            let spriteCell = document.createElement("canvas");      
-            spriteCell.width = 24;
-            spriteCell.height = 24;
-            spriteCell.style.marginLeft = "5px";
-            spriteCell.style.marginBottom = "5px";
-            spriteCell.style.border = "1px dashed white";
-            // spriteCell.style.width = '24px';    
-            // spriteCell.style.height = '24px';                    
-            workAreaContainer.append(spriteCell);
+export const generateWorkArea = (workAreaContainer: HTMLDivElement) => {
+    let counter = 0;
+    for (let row: number = 0; row < Settings.workAreaRowCount; row++) {
+        for (let column: number = 0; column < Settings.workAreaColumnCount; column++) {
+            let workAreaCell = generateCell();
+            workAreaCell.id = "" + counter;
+            workAreaContainer.append(workAreaCell);
+
+            workAreaCell.addEventListener("click", (e) => {
+                SelectedStore.selectSingleCell(workAreaCell);
+            });
+            counter++;
         }
     }
-    
-}
+};

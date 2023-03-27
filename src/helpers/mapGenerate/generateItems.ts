@@ -1,28 +1,41 @@
 //https://dev.to/martyhimmel/animating-sprite-sheets-with-javascript-ag3
 
-export const generateItems = (itemsContainer: HTMLDivElement) => {
-    let sprites:HTMLImageElement = document.createElement("img");
-    sprites.src = 'src/sprites.png';
+import Settings from "../../settings";
+import OptionsStore from "../../store/optionsStore";
+import { SelectedStore } from "../../store/selectedStore";
+import { generateCell } from "./generateCell";
 
-    // let itemsContainer = document.createElement("div");
-    // itemsContainer.style.width = "480px";
-    sprites.onload = ()=>{
-        for(let row: number = 0; row < 20; row++){
-            for(let column: number = 0; column < 32; column++){
-                let spriteCell = document.createElement("canvas");      
-                spriteCell.width = 24;
-                spriteCell.height = 24;
-                spriteCell.style.marginLeft = "5px";
-                spriteCell.style.marginBottom = "5px";
-                spriteCell.style.border = "1px dashed white";
-                // spriteCell.style.width = '48px';    
-                // spriteCell.style.height = '48px';                    
+export const generateItems = (itemsContainer: HTMLDivElement) => {
+    let sprites: HTMLImageElement = document.createElement("img");
+    sprites.src = "src/sprites.png";
+
+    sprites.onload = () => {
+        for (let row: number = 0; row < Settings.spritesRowCount; row++) {
+            for (let column: number = 0; column < Settings.spritesColumnCount; column++) {
+                let spriteCell: HTMLCanvasElement = generateCell();
                 itemsContainer.append(spriteCell);
-    
-                let ctx: CanvasRenderingContext2D = spriteCell.getContext('2d')!;
+
+                spriteCell.addEventListener("click", () => {
+                    if (SelectedStore.singleCell != null) {
+                        let selectedCtx: CanvasRenderingContext2D = SelectedStore.singleCell.getContext("2d")!;
+                        selectedCtx.drawImage(sprites, 48 * column, 48 * row, 48, 48, 0, 0, 24, 24);
+                        SelectedStore.singleCell.setAttribute("spriteX", `${48 * column}`);
+                        SelectedStore.singleCell.setAttribute("spriteY", `${48 * row}`);
+
+                        if (OptionsStore.automatCheckbox!.checked) {
+                            console.log(SelectedStore.singleCell.id);
+                            SelectedStore.selectSingleCell(
+                                document.getElementById("" + (+SelectedStore.singleCell.id + 1)) as HTMLCanvasElement
+                            );
+                        } else {
+                            SelectedStore.deselectSingleCell();
+                        }
+                    }
+                });
+
+                let ctx: CanvasRenderingContext2D = spriteCell.getContext("2d")!;
                 ctx.drawImage(sprites, 48 * column, 48 * row, 48, 48, 0, 0, 24, 24);
             }
         }
-    }
-    
-}
+    };
+};
