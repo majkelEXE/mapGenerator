@@ -1,9 +1,9 @@
 //https://dev.to/martyhimmel/animating-sprite-sheets-with-javascript-ag3
 
-import Settings from "../../settings";
-import OptionsStore from "../../store/optionsStore";
-import { SelectedStore } from "../../store/selectedStore";
-import { generateCell } from "./generateCell";
+import Settings from "../../../settings";
+import OptionsStore from "../../../store/optionsStore";
+import { SelectedStore } from "../../../store/selectedStore";
+import { generateCell } from "../generateCell";
 
 export const generateItems = (itemsContainer: HTMLDivElement) => {
     let sprites: HTMLImageElement = document.createElement("img");

@@ -1,5 +1,5 @@
-import Dimens from "../../interfaces/dimens";
-import Settings from "../../settings";
+import Dimens from "../interfaces/dimens";
+import Settings from "../settings";
 
 export const calcContainerDimens = (cellColumnCount: number, cellRowCount: number): Dimens => {
     let borderWidth = 2;

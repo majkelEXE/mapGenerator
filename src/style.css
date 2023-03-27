@@ -39,6 +39,10 @@ body {
     opacity: 1;
 }
 
+#app .work-area {
+    position: relative;
+}
+
 #app .work-area canvas.cell {
     opacity: 1;
 }
@@ -55,4 +59,11 @@ body {
 
 .selected-cell {
     border: 1px dashed red;
+}
+
+.selected-area {
+    position: absolute;
+    z-index: 100;
+    background-color: yellow;
+    opacity: 0.4;
 }
