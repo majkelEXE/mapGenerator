@@ -3,6 +3,7 @@
 import Settings from "../../../settings";
 import OptionsStore from "../../../store/optionsStore";
 import { SelectedStore } from "../../../store/selectedStore";
+import { drawCell } from "../../drawing/drawCell";
 import { generateCell } from "../generateCell";
 
 export const generateItems = (itemsContainer: HTMLDivElement) => {
@@ -17,19 +18,25 @@ export const generateItems = (itemsContainer: HTMLDivElement) => {
 
                 spriteCell.addEventListener("click", () => {
                     if (SelectedStore.singleCell != null) {
-                        let selectedCtx: CanvasRenderingContext2D = SelectedStore.singleCell.getContext("2d")!;
-                        selectedCtx.drawImage(sprites, 48 * column, 48 * row, 48, 48, 0, 0, 24, 24);
-                        SelectedStore.singleCell.setAttribute("spriteX", `${48 * column}`);
-                        SelectedStore.singleCell.setAttribute("spriteY", `${48 * row}`);
+                        drawCell(SelectedStore.singleCell, sprites, column, row);
 
                         if (OptionsStore.automatCheckbox!.checked) {
                             console.log(SelectedStore.singleCell.id);
                             SelectedStore.selectSingleCell(
                                 document.getElementById("" + (+SelectedStore.singleCell.id + 1)) as HTMLCanvasElement
                             );
+                            return;
                         } else {
                             SelectedStore.deselectSingleCell();
+                            return;
                         }
+                    }
+
+                    if (SelectedStore.cellArea.length != 0) {
+                        SelectedStore.cellArea.forEach((cell) => {
+                            drawCell(cell, sprites, column, row);
+                            SelectedStore.clearCellArea();
+                        });
                     }
                 });
 
