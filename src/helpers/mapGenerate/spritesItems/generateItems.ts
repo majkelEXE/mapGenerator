@@ -1,6 +1,9 @@
 //https://dev.to/martyhimmel/animating-sprite-sheets-with-javascript-ag3
 
+import HistoryEntity from "../../../items/history/historyEntity";
+import HistoryItem from "../../../items/history/historyItem";
 import Settings from "../../../settings";
+import HistoryStore from "../../../store/historyStore";
 import OptionsStore from "../../../store/optionsStore";
 import { SelectedStore } from "../../../store/selectedStore";
 import { drawCell } from "../../drawing/drawCell";
@@ -17,7 +20,13 @@ export const generateItems = (itemsContainer: HTMLDivElement) => {
                 itemsContainer.append(spriteCell);
 
                 spriteCell.addEventListener("click", () => {
+                    let historyEntity: HistoryEntity = new HistoryEntity();
+
                     if (SelectedStore.singleCell != null) {
+                        //sprawdz i usun atrybuty
+                        historyEntity.addItem(new HistoryItem(SelectedStore.singleCell, null, null));
+
+                        //
                         drawCell(SelectedStore.singleCell, sprites, column, row);
 
                         if (OptionsStore.automatCheckbox!.checked) {
@@ -38,6 +47,8 @@ export const generateItems = (itemsContainer: HTMLDivElement) => {
                             SelectedStore.clearCellArea();
                         });
                     }
+
+                    HistoryStore.add(historyEntity);
                 });
 
                 let ctx: CanvasRenderingContext2D = spriteCell.getContext("2d")!;

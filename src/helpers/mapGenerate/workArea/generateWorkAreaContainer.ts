@@ -4,6 +4,7 @@ import { generateWorkArea } from "./generateWorkArea";
 import { calcContainerDimens } from "../../calcContainerDimens";
 import CellsStore from "../../../store/cellsStore";
 import { SelectedStore } from "../../../store/selectedStore";
+import OptionsStore from "../../../store/optionsStore";
 
 export const generateWorkAreaContainer = (): HTMLDivElement => {
     let workAreaContainer: HTMLDivElement = document.createElement("div");
@@ -114,6 +115,11 @@ export const generateWorkAreaContainer = (): HTMLDivElement => {
         latestLastSelectedRow = 0;
     });
     //
+
+    workAreaContainer.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        OptionsStore.toggleContextMenu();
+    });
 
     return workAreaContainer;
 };
