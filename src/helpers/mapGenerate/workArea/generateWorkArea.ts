@@ -17,7 +17,8 @@ export const generateWorkArea = (workAreaContainer: HTMLDivElement) => {
             CellsStore.cells[row][column] = workAreaCell;
 
             workAreaCell.addEventListener("click", (e) => {
-                SelectedStore.selectSingleCell(workAreaCell);
+                // SelectedStore.selectSingleCell(workAreaCell);
+                SelectedStore.selectCellArea(column, column, row, row);
             });
             counter++;
         }

@@ -73,7 +73,7 @@ export const generateWorkAreaContainer = (): HTMLDivElement => {
             firstSelectedColumn != latestFirstSelectedColumn ||
             lastSelectedColumn != latestLastSelectedColumn
         ) {
-            SelectedStore.selecteCellArea(firstSelectedColumn, lastSelectedColumn, firstSelectedRow, lastSelectedRow);
+            SelectedStore.selectCellArea(firstSelectedColumn, lastSelectedColumn, firstSelectedRow, lastSelectedRow);
 
             latestFirstSelectedRow = firstSelectedRow;
             latestLastSelectedRow = lastSelectedRow;

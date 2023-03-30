@@ -3,6 +3,7 @@ import OptionsStore from "./store/optionsStore";
 import { generateItemsContainer } from "./helpers/mapGenerate/spritesItems/generateItemsContainer";
 import { generateWorkAreaContainer } from "./helpers/mapGenerate/workArea/generateWorkAreaContainer";
 import { generateContextMenu } from "./helpers/contextMenu/generateContextMenu";
+import { shortcutListener } from "./helpers/shortcutListener";
 
 let itemsContainer: HTMLDivElement = generateItemsContainer();
 
@@ -19,6 +20,8 @@ let contextMenu = generateContextMenu();
 contextMenu.id = "contextMenu";
 
 let workAreaContainer: HTMLDivElement = generateWorkAreaContainer();
+
+document.addEventListener("keydown", shortcutListener);
 
 document.querySelector<HTMLDivElement>("#app")!.append(itemsContainer);
 document.querySelector<HTMLDivElement>("#app")!.append(optionContainer);

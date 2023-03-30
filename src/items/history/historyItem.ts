@@ -3,9 +3,15 @@ export default class HistoryItem {
     spriteColumn: number | null;
     spriteRow: number | null;
 
-    constructor(cell: HTMLCanvasElement, spriteColumn: number | null, spriteRow: number | null) {
+    constructor(cell: HTMLCanvasElement) {
         this.cell = cell;
-        this.spriteColumn = spriteColumn;
-        this.spriteRow = spriteRow;
+
+        if (cell.hasAttribute("spriteX") && cell.hasAttribute("spriteY")) {
+            this.spriteColumn = Number(cell.getAttribute("spriteX"));
+            this.spriteRow = Number(cell.getAttribute("spriteY"));
+        } else {
+            this.spriteColumn = null;
+            this.spriteRow = null;
+        }
     }
 }
