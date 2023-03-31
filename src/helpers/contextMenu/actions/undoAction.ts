@@ -9,6 +9,5 @@ export const undoAction = () => {
         lastHistoryEntity.historyItems.forEach((historyItem) => {
             drawCell(historyItem.cell, historyItem.spriteColumn, historyItem.spriteRow);
         });
-        console.log(HistoryStore.focusedEntityIndex);
     }
 };

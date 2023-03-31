@@ -1,5 +1,6 @@
 import Settings from "../../../settings";
 import CellsStore from "../../../store/cellsStore";
+import HistoryStore from "../../../store/historyStore";
 import { SelectedStore } from "../../../store/selectedStore";
 import { generateCell } from "../generateCell";
 
@@ -16,13 +17,14 @@ export const generateWorkArea = (workAreaContainer: HTMLDivElement) => {
 
             CellsStore.cells[row][column] = workAreaCell;
 
-            workAreaCell.addEventListener("click", (e) => {
-                // SelectedStore.selectSingleCell(workAreaCell);
+            workAreaCell.addEventListener("click", () => {
                 SelectedStore.selectCellArea(column, column, row, row);
             });
             counter++;
         }
     }
+
+    HistoryStore.initalize();
 };
 
 const makeArray = (a: number, b: number): [][] => {

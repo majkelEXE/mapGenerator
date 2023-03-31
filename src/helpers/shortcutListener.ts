@@ -1,12 +1,12 @@
+import { redoAction } from "./contextMenu/actions/redoAction";
 import { undoAction } from "./contextMenu/actions/undoAction";
 
 export const shortcutListener = (e: KeyboardEvent) => {
     if (e.ctrlKey && e.key === "z") {
-        console.log("CTRL+Z");
         undoAction();
     }
     if (e.ctrlKey && e.key === "y") {
-        console.log("CTRL+Y");
+        redoAction();
     }
     if (e.ctrlKey && e.key === "x") {
         console.log("CTRL+X");

@@ -1,3 +1,4 @@
+import CellsStore from "../../store/cellsStore";
 import HistoryItem from "./historyItem";
 
 export default class HistoryEntity {
@@ -5,9 +6,11 @@ export default class HistoryEntity {
 
     constructor() {
         this.historyItems = [];
-    }
 
-    addItem(historyItem: HistoryItem) {
-        this.historyItems.push(historyItem);
+        CellsStore.cells!.forEach((row) => {
+            row.forEach((cell) => {
+                this.historyItems.push(new HistoryItem(cell));
+            });
+        });
     }
 }

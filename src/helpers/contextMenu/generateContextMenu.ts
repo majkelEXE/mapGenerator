@@ -1,4 +1,6 @@
 import OptionsStore from "../../store/optionsStore";
+import { redoAction } from "./actions/redoAction";
+import { undoAction } from "./actions/undoAction";
 
 export const generateContextMenu = (): HTMLDivElement => {
     let contextMenuOverlay: HTMLDivElement = document.createElement("div");
@@ -8,46 +10,48 @@ export const generateContextMenu = (): HTMLDivElement => {
     contextMenuContent.className = "context-menu-content";
     contextMenuOverlay.appendChild(contextMenuContent);
 
-    let undoAction = document.createElement("div");
-    undoAction.innerHTML = "<p>Undo</p><p>Ctrl+Z</p>";
-    undoAction.className = "context-menu-action";
+    let undoActionElement = document.createElement("div");
+    undoActionElement.innerHTML = "<p>Undo</p><p>Ctrl+Z</p>";
+    undoActionElement.addEventListener("click", undoAction);
+    undoActionElement.className = "context-menu-action";
 
-    let redoAction = document.createElement("div");
-    redoAction.innerHTML = "<p>Redo</p><p>Ctrl+Y</p>";
-    redoAction.className = "context-menu-action";
+    let redoActionElement = document.createElement("div");
+    redoActionElement.innerHTML = "<p>Redo</p><p>Ctrl+Y</p>";
+    redoActionElement.addEventListener("click", redoAction);
+    redoActionElement.className = "context-menu-action";
 
-    let cutAction = document.createElement("div");
-    cutAction.innerHTML = "<p>Cut</p><p>Ctrl+X</p>";
-    cutAction.className = "context-menu-action";
+    let cutActionElement = document.createElement("div");
+    cutActionElement.innerHTML = "<p>Cut</p><p>Ctrl+X</p>";
+    cutActionElement.className = "context-menu-action";
 
-    let copyAction = document.createElement("div");
-    copyAction.innerHTML = "<p>Copy</p><p>Ctrl+C</p>";
-    copyAction.className = "context-menu-action";
+    let copyActionElement = document.createElement("div");
+    copyActionElement.innerHTML = "<p>Copy</p><p>Ctrl+C</p>";
+    copyActionElement.className = "context-menu-action";
 
-    let pasteAction = document.createElement("div");
-    pasteAction.innerHTML = "<p>Paste</p><p>Ctrl+V</p>";
-    pasteAction.className = "context-menu-action";
+    let pasteActionElement = document.createElement("div");
+    pasteActionElement.innerHTML = "<p>Paste</p><p>Ctrl+V</p>";
+    pasteActionElement.className = "context-menu-action";
 
-    let deleteAction = document.createElement("div");
-    deleteAction.innerHTML = "<p>Delete</p><p>Del</p>";
-    deleteAction.className = "context-menu-action";
+    let deleteActionElement = document.createElement("div");
+    deleteActionElement.innerHTML = "<p>Delete</p><p>Del</p>";
+    deleteActionElement.className = "context-menu-action";
 
-    let saveAction = document.createElement("div");
-    saveAction.innerHTML = "<p>Save to file</p><p>Ctrl+S</p>";
-    saveAction.className = "context-menu-action";
+    let saveActionElement = document.createElement("div");
+    saveActionElement.innerHTML = "<p>Save to file</p><p>Ctrl+S</p>";
+    saveActionElement.className = "context-menu-action";
 
-    let loadAction = document.createElement("div");
-    loadAction.innerHTML = "<p>Load data from file</p><p>Ctrl+L</p>";
-    loadAction.className = "context-menu-action";
+    let loadActionElement = document.createElement("div");
+    loadActionElement.innerHTML = "<p>Load data from file</p><p>Ctrl+L</p>";
+    loadActionElement.className = "context-menu-action";
 
-    contextMenuContent.appendChild(undoAction);
-    contextMenuContent.appendChild(redoAction);
-    contextMenuContent.appendChild(cutAction);
-    contextMenuContent.appendChild(copyAction);
-    contextMenuContent.appendChild(pasteAction);
-    contextMenuContent.appendChild(deleteAction);
-    contextMenuContent.appendChild(saveAction);
-    contextMenuContent.appendChild(loadAction);
+    contextMenuContent.appendChild(undoActionElement);
+    contextMenuContent.appendChild(redoActionElement);
+    contextMenuContent.appendChild(cutActionElement);
+    contextMenuContent.appendChild(copyActionElement);
+    contextMenuContent.appendChild(pasteActionElement);
+    contextMenuContent.appendChild(deleteActionElement);
+    contextMenuContent.appendChild(saveActionElement);
+    contextMenuContent.appendChild(loadActionElement);
 
     return contextMenuOverlay;
 };
