@@ -2,15 +2,17 @@ import CellsStore from "./cellsStore";
 import KeyStore from "./keyStore";
 
 export class SelectedStore {
+    static selectedColumnsCount: number = 0;
+    static selectedRowsCount: number = 0;
     static cellArea: HTMLCanvasElement[] = [];
 
-    static selectCellArea = (startColumn: number, endColumn: number, startRow: number, EndRow: number) => {
+    static selectCellArea = (startColumn: number, endColumn: number, startRow: number, endRow: number) => {
         if (!KeyStore.ctrlKeyPressed) {
             SelectedStore.clearCellArea();
         }
 
         console.log("a");
-        if (startColumn == endColumn && startRow == EndRow && KeyStore.ctrlKeyPressed) {
+        if (startColumn == endColumn && startRow == endRow && KeyStore.ctrlKeyPressed) {
             let indexToDelete: number = -1;
             SelectedStore.cellArea.forEach((cell, i) => {
                 if (cell == CellsStore.cells![startRow][startColumn]) {
@@ -25,12 +27,15 @@ export class SelectedStore {
             }
         }
 
-        for (let i = startRow; i <= EndRow; i++) {
+        for (let i = startRow; i <= endRow; i++) {
             for (let j = startColumn; j <= endColumn; j++) {
                 CellsStore.cells![i][j].classList.add("selected-cell");
                 SelectedStore.cellArea.push(CellsStore.cells![i][j]);
             }
         }
+
+        SelectedStore.selectedColumnsCount = endColumn - startColumn;
+        SelectedStore.selectedRowsCount = endRow - startRow
     };
 
     static selectCellAreaSingle = (cell: HTMLCanvasElement) => {
@@ -46,5 +51,7 @@ export class SelectedStore {
         });
 
         SelectedStore.cellArea = [];
+        SelectedStore.selectedColumnsCount = 0;
+        SelectedStore.selectedRowsCount = 0
     };
 }

@@ -29,4 +29,3 @@ document.querySelector<HTMLDivElement>("#app")!.append(itemsContainer);
 document.querySelector<HTMLDivElement>("#app")!.append(optionContainer);
 document.querySelector<HTMLDivElement>("#app")!.append(workAreaContainer);
 document.querySelector<HTMLDivElement>("#app")!.append(contextMenu);
-//testcommit
