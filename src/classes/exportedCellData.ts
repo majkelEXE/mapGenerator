@@ -1,4 +1,6 @@
-export default class ExportedCellData {
+import ExportedData from "../interfaces/exportedData";
+
+export default class ExportedCellData implements ExportedData {
     column: number;
     row: number;
     spriteColumn: number | null;

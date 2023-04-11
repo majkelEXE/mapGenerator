@@ -21,10 +21,20 @@ export const generateItems = (itemsContainer: HTMLDivElement) => {
 
                 spriteCell.addEventListener("click", () => {
                     if (SelectedStore.cellArea.length != 0) {
-                        let lastCellId = SelectedStore.cellArea[SelectedStore.cellArea.length - 1].id;
+                        let lastCellId = 0;
 
                         SelectedStore.cellArea.forEach((cell) => {
-                            drawCell(cell, column, row);
+                            if (!cell) {
+                                return;
+                            }
+
+                            if (parseInt(cell.id) > lastCellId) {
+                                lastCellId = parseInt(cell.id);
+                            }
+                        });
+
+                        SelectedStore.cellArea.forEach((cell) => {
+                            if (cell) drawCell(cell, column, row);
                             SelectedStore.clearCellArea();
                         });
 

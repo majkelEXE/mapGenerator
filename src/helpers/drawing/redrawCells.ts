@@ -1,6 +1,7 @@
+import RedrawCellInterface from "../../interfaces/redrawCellInterface";
 import GenericStore from "../../store/genericStore";
 
-export const redrawCells = (cells: HTMLCanvasElement[][]) => {
+export const redrawCells: RedrawCellInterface = (cells: HTMLCanvasElement[][]): void => {
     cells.forEach((cellsRow) => {
         cellsRow.forEach((cell) => {
             let cellCtx: CanvasRenderingContext2D = cell.getContext("2d")!;

@@ -1,6 +1,5 @@
 import CellSpritesData from "../classes/cellSpritesData";
 import Settings from "../settings";
-import OptionsStore from "./optionsStore";
 
 export class CopiedStore {
     static copiedColumnsCount: number = 0;
@@ -33,7 +32,6 @@ export class CopiedStore {
             }
         });
 
-        //
         let columns = endColumn - startColumn + 1;
         let rows = endRow - startRow + 1;
 
@@ -46,21 +44,12 @@ export class CopiedStore {
             CopiedStore.copiedCellsSpritesData[i].fill(null);
         }
 
-        //
-
         cells.forEach((cell) => {
             if (cell)
                 CopiedStore.copiedCellsSpritesData[parseInt(cell.getAttribute("row")!) - startRow][
                     parseInt(cell.getAttribute("column")!) - startColumn
                 ] = new CellSpritesData(cell);
         });
-
-        // let cellsIterator = 0;
-
-        // for (let j = 0; j < columns; j++) {
-        //     CopiedStore.copiedCellsSpritesData[i][j] = new CellSpritesData(cells[cellsIterator]);
-        //     cellsIterator++;
-        // }
 
         CopiedStore.copiedRowsCount = rows;
         CopiedStore.copiedColumnsCount = columns;

@@ -1,6 +1,11 @@
+import DrawCellInterface from "../../interfaces/drawCellInterface";
 import GenericStore from "../../store/genericStore";
 
-export const drawCell = (cell: HTMLCanvasElement, column: number | null, row: number | null) => {
+export const drawCell: DrawCellInterface = (
+    cell: HTMLCanvasElement,
+    column: number | null,
+    row: number | null
+): void => {
     let cellCtx: CanvasRenderingContext2D = cell.getContext("2d")!;
 
     if (column != null && row != null) {

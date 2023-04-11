@@ -2,6 +2,7 @@ import OptionsStore from "../../store/optionsStore";
 import { copyAction } from "./actions/copyAction";
 import { cutAction } from "./actions/cutAction";
 import { deleteAction } from "./actions/deleteAction";
+import { loadAction } from "./actions/loadAction";
 import { pasteAction } from "./actions/pasteAction";
 import { redoAction } from "./actions/redoAction";
 import { saveAction } from "./actions/saveAction";
@@ -47,11 +48,12 @@ export const generateContextMenu = (): HTMLDivElement => {
 
     let saveActionElement = document.createElement("div");
     saveActionElement.innerHTML = "<p>Save to file</p><p>Ctrl+S</p>";
-    redoActionElement.addEventListener("click", saveAction);
+    saveActionElement.addEventListener("click", saveAction);
     saveActionElement.className = "context-menu-action";
 
     let loadActionElement = document.createElement("div");
     loadActionElement.innerHTML = "<p>Load data from file</p><p>Ctrl+L</p>";
+    loadActionElement.addEventListener("click", loadAction);
     loadActionElement.className = "context-menu-action";
 
     contextMenuContent.appendChild(undoActionElement);

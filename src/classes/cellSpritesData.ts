@@ -1,4 +1,6 @@
-export default class CellSpritesData {
+import SpriteData from "../interfaces/spriteData";
+
+export default class CellSpritesData implements SpriteData {
     spriteColumn: number | null;
     spriteRow: number | null;
 

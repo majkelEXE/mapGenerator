@@ -36,15 +36,17 @@ const pasteMoveAction = (e: MouseEvent) => {
                 j++
             ) {
                 if (CopiedStore.copiedCellsSpritesData[i - previousFirstSelectedRow][j - previousFirstSelectedColumn]) {
-                    drawCellTemporary(
-                        CellsStore.cells![i][j],
-                        CopiedStore.copiedCellsSpritesData[i - previousFirstSelectedRow][
-                            j - previousFirstSelectedColumn
-                        ]!.spriteColumn,
-                        CopiedStore.copiedCellsSpritesData[i - previousFirstSelectedRow][
-                            j - previousFirstSelectedColumn
-                        ]!.spriteRow
-                    );
+                    if (i >= 0 && i < Settings.workAreaRowCount && j >= 0 && j < Settings.workAreaColumnCount) {
+                        drawCellTemporary(
+                            CellsStore.cells![i][j],
+                            CopiedStore.copiedCellsSpritesData[i - previousFirstSelectedRow][
+                                j - previousFirstSelectedColumn
+                            ]!.spriteColumn,
+                            CopiedStore.copiedCellsSpritesData[i - previousFirstSelectedRow][
+                                j - previousFirstSelectedColumn
+                            ]!.spriteRow
+                        );
+                    }
                 }
             }
         }
@@ -61,14 +63,18 @@ const pasteClickAction = () => {
             j++
         ) {
             if (CopiedStore.copiedCellsSpritesData[i - previousFirstSelectedRow][j - previousFirstSelectedColumn]) {
-                CellsStore.cells![i][j].classList.remove("paste-cell");
-                drawCell(
-                    CellsStore.cells![i][j],
-                    CopiedStore.copiedCellsSpritesData[i - previousFirstSelectedRow][j - previousFirstSelectedColumn]!
-                        .spriteColumn,
-                    CopiedStore.copiedCellsSpritesData[i - previousFirstSelectedRow][j - previousFirstSelectedColumn]!
-                        .spriteRow
-                );
+                if (i >= 0 && i < Settings.workAreaRowCount && j >= 0 && j < Settings.workAreaColumnCount) {
+                    CellsStore.cells![i][j].classList.remove("paste-cell");
+                    drawCell(
+                        CellsStore.cells![i][j],
+                        CopiedStore.copiedCellsSpritesData[i - previousFirstSelectedRow][
+                            j - previousFirstSelectedColumn
+                        ]!.spriteColumn,
+                        CopiedStore.copiedCellsSpritesData[i - previousFirstSelectedRow][
+                            j - previousFirstSelectedColumn
+                        ]!.spriteRow
+                    );
+                }
             }
         }
     }

@@ -1,6 +1,11 @@
+import DrawCellInterface from "../../interfaces/drawCellInterface";
 import GenericStore from "../../store/genericStore";
 
-export const drawCellTemporary = (cell: HTMLCanvasElement, column: number | null, row: number | null) => {
+export const drawCellTemporary: DrawCellInterface = (
+    cell: HTMLCanvasElement,
+    column: number | null,
+    row: number | null
+) => {
     let cellCtx: CanvasRenderingContext2D = cell.getContext("2d")!;
 
     cell.classList.add("paste-cell");
