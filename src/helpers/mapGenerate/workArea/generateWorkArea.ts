@@ -12,6 +12,8 @@ export const generateWorkArea = (workAreaContainer: HTMLDivElement) => {
     for (let row: number = 0; row < Settings.workAreaRowCount; row++) {
         for (let column: number = 0; column < Settings.workAreaColumnCount; column++) {
             let workAreaCell = generateCell();
+            workAreaCell.setAttribute("row", String(row));
+            workAreaCell.setAttribute("column", String(column));
             workAreaCell.id = "" + counter;
             workAreaContainer.append(workAreaCell);
 

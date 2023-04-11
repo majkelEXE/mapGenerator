@@ -52,6 +52,10 @@ body {
     cursor: pointer;
 }
 
+.paste-cell {
+    border: 1px dashed green !important;
+}
+
 .cell:hover {
     border: 1px dashed red;
     opacity: 1;

@@ -9,6 +9,7 @@ import OptionsStore from "../../../store/optionsStore";
 export const generateWorkAreaContainer = (): HTMLDivElement => {
     let workAreaContainer: HTMLDivElement = document.createElement("div");
     let workAreaContainerDimens: Dimens = calcContainerDimens(Settings.workAreaColumnCount, Settings.workAreaRowCount);
+    workAreaContainer.id = "work-area";
     workAreaContainer.className = "work-area";
     workAreaContainer.style.width = workAreaContainerDimens.width + "px";
     workAreaContainer.style.height = workAreaContainerDimens.height + "px";

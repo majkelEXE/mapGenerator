@@ -1,5 +1,10 @@
 import OptionsStore from "../../store/optionsStore";
+import { copyAction } from "./actions/copyAction";
+import { cutAction } from "./actions/cutAction";
+import { deleteAction } from "./actions/deleteAction";
+import { pasteAction } from "./actions/pasteAction";
 import { redoAction } from "./actions/redoAction";
+import { saveAction } from "./actions/saveAction";
 import { undoAction } from "./actions/undoAction";
 
 export const generateContextMenu = (): HTMLDivElement => {
@@ -22,22 +27,27 @@ export const generateContextMenu = (): HTMLDivElement => {
 
     let cutActionElement = document.createElement("div");
     cutActionElement.innerHTML = "<p>Cut</p><p>Ctrl+X</p>";
+    cutActionElement.addEventListener("click", cutAction);
     cutActionElement.className = "context-menu-action";
 
     let copyActionElement = document.createElement("div");
     copyActionElement.innerHTML = "<p>Copy</p><p>Ctrl+C</p>";
+    copyActionElement.addEventListener("click", copyAction);
     copyActionElement.className = "context-menu-action";
 
     let pasteActionElement = document.createElement("div");
     pasteActionElement.innerHTML = "<p>Paste</p><p>Ctrl+V</p>";
+    pasteActionElement.addEventListener("click", pasteAction);
     pasteActionElement.className = "context-menu-action";
 
     let deleteActionElement = document.createElement("div");
     deleteActionElement.innerHTML = "<p>Delete</p><p>Del</p>";
+    deleteActionElement.addEventListener("click", deleteAction);
     deleteActionElement.className = "context-menu-action";
 
     let saveActionElement = document.createElement("div");
     saveActionElement.innerHTML = "<p>Save to file</p><p>Ctrl+S</p>";
+    redoActionElement.addEventListener("click", saveAction);
     saveActionElement.className = "context-menu-action";
 
     let loadActionElement = document.createElement("div");

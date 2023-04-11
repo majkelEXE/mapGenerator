@@ -1,4 +1,9 @@
+import { copyAction } from "./contextMenu/actions/copyAction";
+import { deleteAction } from "./contextMenu/actions/deleteAction";
+import { loadAction } from "./contextMenu/actions/loadAction";
+import { pasteAction } from "./contextMenu/actions/pasteAction";
 import { redoAction } from "./contextMenu/actions/redoAction";
+import { saveAction } from "./contextMenu/actions/saveAction";
 import { undoAction } from "./contextMenu/actions/undoAction";
 
 export const shortcutListener = (e: KeyboardEvent) => {
@@ -9,21 +14,23 @@ export const shortcutListener = (e: KeyboardEvent) => {
         redoAction();
     }
     if (e.ctrlKey && e.key === "x") {
-        console.log("CTRL+X");
+        copyAction();
+        deleteAction();
     }
     if (e.ctrlKey && e.key === "c") {
-        console.log("CTRL+C");
+        copyAction();
     }
     if (e.ctrlKey && e.key === "v") {
-        console.log("CTRL+V");
+        pasteAction();
     }
     if (e.key === "Delete") {
-        console.log("Del");
+        deleteAction();
     }
     if (e.ctrlKey && e.key === "s") {
-        console.log("CTRL+S");
+        e.preventDefault();
+        saveAction();
     }
     if (e.ctrlKey && e.key === "l") {
-        console.log("CTRL+L");
+        loadAction();
     }
 };
