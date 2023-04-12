@@ -1,6 +1,11 @@
 import RedrawCellInterface from "../../interfaces/redrawCellInterface";
 import GenericStore from "../../store/genericStore";
 
+/** Redraws cells(used to clear temporary draw changes)
+ *
+ * @param cells a two dimensional array of HTMLCanvasElements containg cells in work area.
+ *
+ */
 export const redrawCells: RedrawCellInterface = (cells: HTMLCanvasElement[][]): void => {
     cells.forEach((cellsRow) => {
         cellsRow.forEach((cell) => {

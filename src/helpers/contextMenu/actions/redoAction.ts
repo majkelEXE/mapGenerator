@@ -2,6 +2,7 @@ import HistoryEntity from "../../../items/history/historyEntity";
 import HistoryStore from "../../../store/historyStore";
 import { drawCell } from "../../drawing/drawCell";
 
+/** Redoes last changes. */
 export const redoAction = () => {
     let earlierHistoryItem: HistoryEntity | null = HistoryStore.returnEarlier();
 

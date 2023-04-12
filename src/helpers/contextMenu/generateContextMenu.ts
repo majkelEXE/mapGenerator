@@ -8,6 +8,11 @@ import { redoAction } from "./actions/redoAction";
 import { saveAction } from "./actions/saveAction";
 import { undoAction } from "./actions/undoAction";
 
+/**
+ * Creates the context menu, with prepared options handlers.
+ *
+ * @returns HTMLDivElement containing the actual context menu(menu showing at mouse right click).
+ */
 export const generateContextMenu = (): HTMLDivElement => {
     let contextMenuOverlay: HTMLDivElement = document.createElement("div");
     contextMenuOverlay.className = "context-menu-overlay";

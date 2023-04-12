@@ -1,6 +1,14 @@
 import ExportedCellData from "../../../classes/exportedCellData";
 import CellsStore from "../../../store/cellsStore";
 
+/** Invokes saved file download.
+ *
+ *
+ * @param data array of cells data parsed to JSON.
+ * @param filename the name of file.
+ * @param type the type of file.
+ *
+ */
 const save = (data: string, filename: string, type: string) => {
     console.log(data, data.length);
     const blob: Blob = new Blob([data], { type: type });
@@ -24,6 +32,7 @@ const save = (data: string, filename: string, type: string) => {
     }, 100);
 };
 
+/** Saves current work area state to json file. */
 export const saveAction = () => {
     const exportedCellsData: ExportedCellData[] = [];
 

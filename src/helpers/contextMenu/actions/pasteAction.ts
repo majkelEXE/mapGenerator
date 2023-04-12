@@ -11,6 +11,7 @@ import { redrawCells } from "../../drawing/redrawCells";
 let previousFirstSelectedColumn: number = -1;
 let previousFirstSelectedRow: number = -1;
 
+/** Loads cells sprites data from file and merges it to current work area. */
 const pasteMoveAction = (e: MouseEvent) => {
     let currentX: number = e.clientX - document.getElementById("work-area")!.getBoundingClientRect().left;
     let currentY: number = e.clientY - document.getElementById("work-area")!.getBoundingClientRect().top;

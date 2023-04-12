@@ -1,4 +1,5 @@
 import { copyAction } from "./contextMenu/actions/copyAction";
+import { cutAction } from "./contextMenu/actions/cutAction";
 import { deleteAction } from "./contextMenu/actions/deleteAction";
 import { loadAction } from "./contextMenu/actions/loadAction";
 import { pasteAction } from "./contextMenu/actions/pasteAction";
@@ -6,6 +7,11 @@ import { redoAction } from "./contextMenu/actions/redoAction";
 import { saveAction } from "./contextMenu/actions/saveAction";
 import { undoAction } from "./contextMenu/actions/undoAction";
 
+/**
+ * Key listener, determines what key is already clicked or what shortcut is invoked.
+ *
+ * @param e event containg data about clicked keys.
+ */
 export const shortcutListener = (e: KeyboardEvent) => {
     if (e.ctrlKey && e.key === "z") {
         undoAction();
@@ -14,8 +20,7 @@ export const shortcutListener = (e: KeyboardEvent) => {
         redoAction();
     }
     if (e.ctrlKey && e.key === "x") {
-        copyAction();
-        deleteAction();
+        cutAction();
     }
     if (e.ctrlKey && e.key === "c") {
         copyAction();

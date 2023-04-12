@@ -4,6 +4,7 @@ import CellsStore from "../../../store/cellsStore";
 import HistoryStore from "../../../store/historyStore";
 import { drawCell } from "../../drawing/drawCell";
 
+/** Loads cells sprites data from file and merges it to current work area. */
 const load = () => {
     let input: HTMLInputElement = document.getElementById("files")! as HTMLInputElement;
     console.log(input);

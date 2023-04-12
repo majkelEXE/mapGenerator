@@ -3,6 +3,7 @@ import HistoryStore from "../../../store/historyStore";
 import { SelectedStore } from "../../../store/selectedStore";
 import { drawCell } from "../../drawing/drawCell";
 
+/** Deletes selected cells sprites data. */
 export const deleteAction = () => {
     SelectedStore.cellArea.forEach((cell) => {
         if (cell) drawCell(cell, null, null);

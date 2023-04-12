@@ -1,6 +1,13 @@
 import DrawCellInterface from "../../interfaces/drawCellInterface";
 import GenericStore from "../../store/genericStore";
 
+/** Draws cell permanently
+ *
+ * @param cell the HTMLCanvasElement to edit.
+ * @param column number of column in sprite.
+ * @param row number of row in sprite.
+ *
+ */
 export const drawCell: DrawCellInterface = (
     cell: HTMLCanvasElement,
     column: number | null,
