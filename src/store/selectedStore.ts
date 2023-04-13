@@ -1,9 +1,18 @@
 import CellsStore from "./cellsStore";
 import KeyStore from "./keyStore";
 
+/** Stores data about selected cells*/
 export class SelectedStore {
+    /** Stores references to selected cells*/
     static cellArea: (HTMLCanvasElement | null)[] = [];
 
+    /**
+     * Selects an area of cells
+     * @param startColumn which column is first in new selected area
+     * @param endColumn which column is last in new selected area
+     * @param startRow which row is first in new selected area
+     * @param endRow which row is last in new selected area
+     */
     static selectCellArea = (startColumn: number, endColumn: number, startRow: number, endRow: number) => {
         if (!KeyStore.ctrlKeyPressed) {
             SelectedStore.clearCellArea();
@@ -33,6 +42,10 @@ export class SelectedStore {
         }
     };
 
+    /**
+     * Selects one single cell
+     * @param cell reference to a sell to select
+     */
     static selectCellAreaSingle = (cell: HTMLCanvasElement) => {
         SelectedStore.clearCellArea();
 
@@ -40,6 +53,7 @@ export class SelectedStore {
         SelectedStore.cellArea.push(cell);
     };
 
+    /** Deselects all cells*/
     static clearCellArea = () => {
         SelectedStore.cellArea.forEach((cell) => {
             if (cell) cell.classList.remove("selected-cell");

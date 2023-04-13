@@ -5,12 +5,12 @@ import KeyStore from "../store/keyStore";
  */
 export const ctrlListener = () => {
     document.addEventListener("keydown", (e) => {
-        if (e.ctrlKey && e.key == "Control") {
+        if ((e.ctrlKey && e.key == "Control") || (e.metaKey && e.key == "Meta")) {
             KeyStore.ctrlKeyPressed = true;
         }
     });
     document.addEventListener("keyup", (e) => {
-        if (e.key == "Control") {
+        if (e.key == "Control" || e.key == "Meta") {
             KeyStore.ctrlKeyPressed = false;
         }
     });

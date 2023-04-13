@@ -12,100 +12,51 @@
 <div class="col-content">
 <div class="tsd-page-title">
 <h2>Map generator</h2></div>
-<div class="tsd-panel tsd-typography"><a id="$bioinformatic-app" class="tsd-anchor"></a><h1><a href="#$bioinformatic-app" style="color:inherit;text-decoration:none">Bioinformatic App</a></h1><p>Aplikacja analizująca ciąg DNA lub RNA. Wynikiem programu jest lista białek w podanej sekwencji, wraz z wizualizacją ich struktury oraz zestawieniem właściwości fizycznych.</p>
-<a id="$instalacja" class="tsd-anchor"></a><h2><a href="#$instalacja" style="color:inherit;text-decoration:none">Instalacja</a></h2><p>Aby w poprawny sposób zainstalować aplikację, wykonaj poniższe polecenia(Python 3.10.6 lub nowszy):</p>
-<pre><code class="language-bash"><span class="hl-0">  git </span><span class="hl-1">clone</span><span class="hl-0"> </span><span class="hl-1">git@github.com:majkelEXE/Bioinformatic_App.git</span><br/><br/><span class="hl-0">  </span><span class="hl-2">cd</span><span class="hl-0"> </span><span class="hl-1">Bioinformatic_App</span><br/><br/><span class="hl-0">  py </span><span class="hl-1">-3</span><span class="hl-0"> </span><span class="hl-1">-m</span><span class="hl-0"> </span><span class="hl-1">venv</span><span class="hl-0"> </span><span class="hl-1">.venv</span><br/><br/><span class="hl-0">  .venv\scripts\activate</span><br/><br/><span class="hl-0">  pip </span><span class="hl-1">install</span><span class="hl-0"> </span><span class="hl-1">-r</span><span class="hl-0"> </span><span class="hl-1">requirements.txt</span><br/><br/><span class="hl-0">  python </span><span class="hl-1">main.py</span>
-</code></pre>
-<p>Przykładowe sekwencje do sprawdzenia poprawności zainstalowanej aplikacji:</p>
-<ul>
-<li><em>taagaggctacacagtcttgaggaaactagaattagaaactaacgctactctcgtctccgtccccgttcttaaaggtaagccgcgtgcactaggtcagcgggcgggatcctcttcgttatcctcccccaaaaggtcttgcggcaccaaggatccccaccataaaactcatgcctatcactagtcgcgactggatgcttataagcgacagcggcctagtgaagggtggtagacaatctcagtgtcttacaaacggtatacctgacctgcgacggctaattacgcactttcaatcttaagttgaggttatcagccggaccaaacactctgtgctcttacttgctgggttccaggagtgcgcgccacgtgaagtcgacaaacttcaaaagcttcgcaggactccacgcagggactccaacggaccttctaacctacccgtgatgtctgctccacgccagctagactcatgccgtcaatgtctggctatattggttaaaagctctcatcaccgtcgatttttttgtggttcgaggccacggctttactagtcccgtaagaccgtggtggtatgggcagcctacgatatgtttagcatcggagaacgtgaagtaaagatattggagatactggacctgattcgatgcactacacaaggccagtctctataggggccctctttgtgtccttagaattacgagcgagattaatgctacaaaggaaagagaaggtcggatgagggtgttagtgacaaatactatgtggtgggccacgaacattacatcacctccacggcacggaggcatggtacgcatatatctttttccctgtttgaccagggggttgatcagacgattcttttgccagtaacagtaacgcgtcagcattgctacgtcatgagtgattcgctagcagaccttgtccacgaataatggcgcacaaactccgcgaacccctcgttcactgaatcaatggttgtgccagcgttggcggtgtgacatacgg</em></li>
-<li><em>caaccacactggagaacgagtaagggatcgggcgagcggtactctaaatccaaacggtataataagagctccgcgtaaagtcaaggattctgaaagatttgagtgtctcgccgcattccgctacaaagatctggcatattggtcaccttctatcggttaattccgaaaaatttggctaccagatatggatatgagttagatttaaagcggtagtgagaagttccaccacattgcgccgatcagtagaatggcccaaaagtcgcctatctgcctagtcagaaactgaccgagagcgggagtccgtagcactctcaagagagacgttgtatagtgtgcagtcacttcggtgccctactgcgtaacctggggtccagccggccaatgcgggtcggcgtcggacgatacgtgcagctacgctaaaactcccagagggaggcagacaccaaggggtcaccatccagtgccacaaagagcctataatggttggatggcttcttattataaaagaaggagagcataactgcggtggtggtaggtttacaatccagcgagccgggcgtcgtactgattagagcatataaacctggattaatcaacacccttcatcacggctcgattccatcggacggcagacgaaagcagactggcttttgcggcacggggatatgcggtaagccaggataagaacaacattttacttcgcaaatgacctggtgcgcttttacgacaataataggtcgtttttgggaagtcacgggtcggcggattcgggatcagcgggttatctagatcggcgcgtttagcaagggtgccgcaggccgtactgtactattgacacttaatacccgtactaatggatgaacagcgttctaatactgtcacggtacctcatgcatgacctagaacaagtccatatcgaagcttgttcgagcatcgtgaaaccggccgagcacccggtcttgctactggctcccattatctaacggctaacaagggacc</em></li>
-</ul>
-<a id="$spis-treści" class="tsd-anchor"></a><h1><a href="#$spis-treści" style="color:inherit;text-decoration:none">Spis treści</a></h1><p><a href="#_Toc128342665">I. Wstęp</a></p>
-<p><a href="#_Toc128342666">&emsp;1. Podział dokumentacji</a></p>
-<p><a href="#_Toc128342667">&emsp;2. Organizacja pracy</a></p>
-<p><a href="#_Toc128342668">&emsp;3. Proces developmentu</a></p>
-<p><a href="#_Toc128342669">&emsp;4. Ogólne spostrzeżenia</a></p>
-<p><a href="#_Toc128342670">II. Funkcjonalnośc aplikacji</a></p>
-<p><a href="#_Toc128342671">&emsp;1. Interfejs</a></p>
-<p><a href="#_Toc128342672">&emsp;2. Analiza sekwencji</a></p>
-<p><a href="#_Toc128342673">&emsp;3. Wizualizacja białka</a></p>
-<p><a href="#_Toc128342674">&emsp;4. Wykres właściwości fizycznych białka</a></p>
-<p><a href="#_Toc128342675">III. Struktura aplikacji</a></p>
-<p><a href="#_Toc128342676">&emsp;1. Główna architektura aplikacji</a></p>
-<p><a href="#_Toc128342677">&emsp;2. amino_acid_interpreter</a></p>
-<p><a href="#_Toc128342678">&emsp;3. amino_acid_plots</a></p>
-<p><a href="#_Toc128342679">&emsp;4. amino_acid_visualizer</a></p>
-<p><a href="#_Toc128342680">&emsp;5. tests</a></p>
-<a id="$i-wstęp" class="tsd-anchor"></a><h1><a href="#$i-wstęp" style="color:inherit;text-decoration:none"><strong>I. Wstęp</strong></a></h1><a id="$1-podział-dokumentacji" class="tsd-anchor"></a><h2><a href="#$1-podział-dokumentacji" style="color:inherit;text-decoration:none">1. Podział dokumentacji</a></h2><p>Dokumentacja została podzielona na 4 główne sekcje:</p>
-<p>- <em>Wstęp</em> – informacje o przebiegu, organizacji oraz indywidualnych odczuciach związanych z pracą nad aplikacją</p>
-<p>- <em>Funkcjonalność aplikacji</em> – „właściwa dokumentacja” określająca sposób użytkowania aplikacji, wraz z wszelkimi informacjami na temat jej działania</p>
-<p>- <em>Struktura aplikacji</em> – sekcja opisująca techniczną architekturę aplikacji, poświęcona w głównej mierze opisie autorskich modułów, z których została utworzona</p>
-<p>- <em>Źródła</em> – artykuły, poradniki, bądź badania, które w szczególny sposób przysłużyły się rozwojowi aplikacji</p>
-<a id="$2-organizacja-pracy" class="tsd-anchor"></a><h2><a href="#$2-organizacja-pracy" style="color:inherit;text-decoration:none">2. Organizacja pracy</a></h2><p>Nietypowa tematyka aplikacji - bioinformatyka zmusiła nas do podziału drużyna na 2 obozy. Wśród nich jeden stanowiły osoby zajmujące się poszukiwaniem informacji na temat aminokwasów, następnie segregacją znalezionych danych, przygotowaniem funkcjonalnych przykładów a także edukacją drugiej części drużyny. Ta odpowiedzialna była za utworzenie funkcjonalnego programu w oparciu o zdobytą wiedzę oraz szablony utworzone przez osoby zajmujące się częścią teoretyczną.</p>
-<a id="$3-proces-developmentu" class="tsd-anchor"></a><h2><a href="#$3-proces-developmentu" style="color:inherit;text-decoration:none">3. Proces developmentu</a></h2><p>Aplikacja zaczęła powstawać od końca listopada, a pracę nad nią trwały aż do końca lutego. Wspomniany okres był szczególnie intensywny na początku grudnia, kiedy to aby odpowiedzieć sobie na pytanie jak coś funkcjonuje, musieliśmy najpierw postawić przed sobą dwa zupełnie nowe pytania. Każdy początkowy krok do przodu wymagał od nas dwóch kroków w tył, co pierwotnie sprawiało błędne wrażenie, że zamiast iść do przodu – cofamy się. Wraz ze zdobyciem informacji, przygotowaniem danych do testów oraz czasochłonną edukacją pozostałych członków drużyny, rozpoczął się proces właściwego powstawania aplikacji – wreszcie pojawiły się pierwsze linijki kodu.</p>
-<p>Do napisania aplikacji zdecydowaliśmy się posłużyć językiem Python ze względu na jego wszechstronność oraz satysfakcję z pracy. Wadą tego rozwiązania okazała się być wydajność, lecz istotna była dla nas przede wszystkim zabawa. Zdecydowaliśmy jej sobie nie odbierać i użyć języka, w którym każdy się odnajduje. Pełny kształt aplikacja osiągnęła na początku lutego, lecz ilość rzeczy do poprawy, bądź przebudowy wciąż była przytłaczająco duża. Mimo narastającej presji czasu pod koniec lutego aplikacja osiągnęła swój finalny kształt oraz została zabezpieczona przed błędami.</p>
-<a id="$4-ogólne-spostrzeżenia" class="tsd-anchor"></a><h2><a href="#$4-ogólne-spostrzeżenia" style="color:inherit;text-decoration:none">4. Ogólne spostrzeżenia</a></h2><p>Wszyscy członkowie drużyny musieli zmierzyć się z ogromnym wyzwaniem, aby zająć się tematem zupełnie dla nas obcym. Zdecydowanie dobrym pomysłem był podział drużyny na dwie podgrupy, gdyż część zawodników naszej drużyny ma naturalną zdolność do przyswajania nowej wiedzy na wszelkie tematy, podczas gdy dla pozostałych temat biologii i chemii to obcy i dość przerażający świat. To rozwiązanie pomogło przydzielić każdemu zajęcie, które sprawia mu najmniej trudności i daje siłę do dalszej pracy. Ostatecznie każdy czuje zadowolenie z wykonanej aplikacji, ponieważ wyzwanie którego się podjęliśmy nie należało do najprostszych. Mówiąc szczerze mogliśmy wybrać coś innego, co wykonalibyśmy po najprostszej linii oporu, jednak to by nas tak nie usatysfakcjonowało. Koniec końcu stworzyliśmy coś z czego jesteśmy niesamowicie dumni, niezależnie czy przyniesie nam to przepustkę do trzeciego etapu czy też nie.</p>
-<a id="$ii-funkcjonalnośc-aplikacji" class="tsd-anchor"></a><h1><a href="#$ii-funkcjonalnośc-aplikacji" style="color:inherit;text-decoration:none"><strong>II. Funkcjonalnośc aplikacji</strong></a></h1><a id="$1-interfejs" class="tsd-anchor"></a><h2><a href="#$1-interfejs" style="color:inherit;text-decoration:none">1. Interfejs</a></h2><p><img src="https://i.imgur.com/at0S1Dy.png" alt="Interfejs"></p>
-<p><strong><em>A</em></strong> – input służący do wczytania sekwencji DNA, bądź RNA</p>
-<p><strong><em>B</em></strong> – przycisk do importu sekwencji DNA lub RNA z pliku tekstowego, wczytana sekwencja pojawia się w inpucie A</p>
-<p><strong><em>C</em></strong> – przycisk do wykonania analizy podanego DNA lub RNA. Jest on zablokowany, aż do momentu gdy w inpucie A znajdzie się całkowicie poprawna sekwencja DNA lub RNA</p>
-<p><strong><em>D</em></strong> – przyciski wyboru ramek odczytu(Frame 1: +1; Frame 2: +2; Frame 3: +3). Stają się one aktywne dopiero po przeanalizowaniu sekwencji za pomocą przycisku C</p>
-<p><strong><em>E</em></strong> – białka zawarte w danej ramce odczytu. Treść tej sekcji pojawia się dopiero przeanalizowaniu sekwencji, a następnie wybraniu danej ramki. Blok E może być pusty, gdy w danej ramce odczytu nie udało się znaleźć żadnego białka, bądź zawierać listę przeanalizowanych białek</p>
-<a id="$2-analiza-sekwencji" class="tsd-anchor"></a><h2><a href="#$2-analiza-sekwencji" style="color:inherit;text-decoration:none">2. Analiza sekwencji</a></h2><p>Wprowadź poprawną sekwencję RNA(litery: A,U,C,G) lub DNA(litery: A,T,C,G) ręcznie, bądź wybierz przycisk <em>„Import”</em> aby zaimportować sekwencję z pliku tekstowego. Do momentu aż prawidłowa sekwencja nie pojawi się w inpucie - program nie umożliwi wykonywania dalszej części operacji.</p>
-<p><em>UWAGA!</em></p>
-<p><em>Wprowadzana sekwencja nie może zawierać żadnych białych znaków(spacji, enterów itp.) ani w inpucie, ani w pliku tekstowym.</em></p>
-<p><img src="https://i.imgur.com/jDbD7jT.png" alt="Wczytanie"></p>
-<p>Po przeanalizowaniu białek należy wybrać jedną z trzech ramek odczytu(Frame 1: +1; Frame 2: +2; Frame 3: +3). Ramka odczytu, definiuje od którego nukleotydu podana sekwencja będzie zamieniana na kodony.</p>
-<p><img src="https://i.imgur.com/jDbD7jT.png" alt="Analiza"></p>
-<p>Po wybraniu jednej spośród trzech dostępnych ramek odczytu, pojawiają się zawarte w niej białka. Obok każdego białka będą są dostępne dwa przyciski*: „Visualization”*(wizualizacja białka) oraz *„Plots”(*właściwości fizyczne białka).</p>
-<p><img src="https://i.imgur.com/NjTDBV1.png" alt="Ramki"></p>
-<a id="$3-wizualizacja-białka" class="tsd-anchor"></a><h2><a href="#$3-wizualizacja-białka" style="color:inherit;text-decoration:none">3. Wizualizacja białka</a></h2><p>Po wczytaniu sekwencji RNA lub DNA, a następnie wybraniu ramki odczytu, pojawia się lista białek wraz z dwoma widocznymi przyciskami obok każdego elementu. Aby wyświetlić wzór strukturalny wybranego białka należy kliknąć w podany obok niego przycisk <em>„Visualization”</em>.</p>
-<p><img src="https://i.imgur.com/mLFxBsW.png" alt="Wizualizacja przycisk"></p>
-<p>Po kliknięciu pojawia się load screen, który znika w momencie gdy wizualizacja białka jest gotowa do wyświetlenia.</p>
-<p><em>Uwaga!</em></p>
-<p><em>Im dłuższa sekwencja tym dłuższy czas oczekiwania na wygenerowanie wzoru strukturalnego. W skrajnych przypadkach proces generacji może się wydłużyć nawet do kilku minut.</em></p>
-<p><img src="https://i.imgur.com/KvlcjJD.png" alt="Splash screen"></p>
-<p>Po wygenerowaniu wizualizacji użytkownik otrzymuje rezultat w postaci dwóch wzorów strukturalnych. <em>Pierwszy</em> z nich jest przedstawiony w sposób szablonowy, bez wyszczególnionych aminokwasów, podczas gdy <em>drugi</em> umożliwia rozróżnienie konkretnych aminokwasów we wzorze za pomocą kolorów(legenda po kliknięciu we wzór). Aby uzyskać bardziej szczegółowy widok należy kliknąć w jeden z dwóch wzorów.</p>
-<p>Co więcej tuż nad przyciskiem „Save Svgs” znajduje informacja o masie wybranego białka.</p>
-<p><img src="https://i.imgur.com/TdNdwJZ.png" alt="Główna wizualizacja"></p>
-<p>Po kliknięciu w pierwszy wzór strukturalny otwiera się okienko przedstawiające wizualizacje w powiększeniu.</p>
-<p><img src="https://i.imgur.com/YBdmalX.png" alt="Bazowa wizualizacja"></p>
-<p>Kliknięcie w drugi spośród wzorów również poskutkuje otwarciem okienka wraz z powiększoną wizualizacją, w tym wypadku w prawym górnym rogu widoczna jest legenda, przypisującą kolory konkretnym aminokwasom.</p>
-<p><img src="https://i.imgur.com/BZ92aDt.png" alt="Kolorowa wizualizacja"></p>
-<p>Użytkownik ma także możliwość zapisu wygenerowanych wzorów strukturalnych w postaci plików SVG(zawierających kompresję bezstratną). Aby zapisać wzory należy kliknąć w przycisk „Save Svgs” głównego okienka wizualizacji.</p>
-<p><img src="https://i.imgur.com/yQ03uKN.png" alt="Save Svgs przycisk"></p>
-<a id="$4-wykres-właściwości-fizycznych-białka" class="tsd-anchor"></a><h2><a href="#$4-wykres-właściwości-fizycznych-białka" style="color:inherit;text-decoration:none">4. Wykres właściwości fizycznych białka</a></h2><p>W celu analizy właściwości fizycznych białka, należy uprzednio podać poprawną sekwencję RNA lub DNA, następnie ją przeanalizować i wybrać jedną z pośród trzech ramek odczytu. Następnie obok każdego białka w wybranej ramce odczytu pokaże się przycisk „Plots”, który należy kliknąć w celu uzyskania konkretnej analizy właściwości fizycznych białka.</p>
-<p><img src="https://i.imgur.com/t2KOi2h.png" alt="Wykresy przycisk"></p>
-<p>Po kliknięciu przycisku pojawi się gotowa analiza właściwości fizycznych białka. Na osi pionowej Y znajdują się wartości, z kolei na osi X pozycje aminokwasów w sekwencji. Nad wykresami znajduje się również informacja o wartości punktu izoelektrycznego.</p>
-<p><em>Uwaga!</em></p>
-<p><em>Niezwykle krótkie białka(składające się z mniej niż 6 aminokwasów) mogą uniemożliwić jego pełną analizę, dlatego niektóre właściwości nie zostaną obliczone.</em></p>
-<p><img src="https://i.imgur.com/r5hu215.png" alt="Wykresy główna"></p>
-<p>Przedstawiona analiza umożliwia użytkownikowi interakcję. W celu przybliżenia wykresów należy posłużyć się scroll’em myszki.</p>
-<p>Ponadto poza przybliżeniem wykresu użytkownik może również przesuwać wykres, w celu skupienia się na interesujących go fragmentach sekwencji. Aby przesunąć wykres należy kliknąć lewy przycisk myszki a następnie przesunąć go w daną stronę(kierunek przesuwania zgodny jest z metodą drag).</p>
-<p><img src="https://i.imgur.com/146njz8.png" alt="Wykresy przybliżone"></p>
-<a id="$iii-struktura-aplikacji" class="tsd-anchor"></a><h1><a href="#$iii-struktura-aplikacji" style="color:inherit;text-decoration:none"><strong>III. Struktura aplikacji</strong></a></h1><a id="$1-główna-architektura-aplikacji" class="tsd-anchor"></a><h2><a href="#$1-główna-architektura-aplikacji" style="color:inherit;text-decoration:none">1. Główna architektura aplikacji</a></h2><p>Aplikacja została podzielona na trzy główne moduły wykonawcze oraz jeden moduł testowy. Każdy z konkretnych modułów odpowiada za inne funkcje:</p>
-<p>- <em>amino_acid_interpreter</em> – analiza wprowadzonej sekwencji RNA lub DNA oraz zwrócenie białek zawartych w podanej sekwencji, wraz z rozróżnieniem na konkretne ramki odczytu</p>
-<p>- <em>amino_acid_plots</em> – algorytmy obliczające wartości właściwości fizycznych dla wybranego białka wraz z architekturą i implemetacją okienka przedstawiającego wyliczone wartości</p>
-<p>- <em>amino_acid_visualizer</em> – generowanie wzorów strukturalnych, a także masy podanego białka, wraz z architekturą okienka oraz jego implementacją</p>
-<p>- <em>tests</em> – testy jednostkowe sprawdzające poprawność zaimplementowanej funkcjonalności</p>
-<p>- <em>main.py</em> – główny plik definiujący interfejs aplikacji</p>
-<a id="$2-amino_acid_interpreter" class="tsd-anchor"></a><h2><a href="#$2-amino_acid_interpreter" style="color:inherit;text-decoration:none">2. amino_acid_interpreter</a></h2><p>Moduł odpowiedzialny za analizę otrzymanej sekwencji DNA lub RNA. Zaimplementowano w nim autorski algorytm interpretujący sekwencję w trzech ramkach odczytu, a także zabezpieczający przed wczytaniem niepoprawnych znaków w sekwencji. Jako rezultat zwracany jest słownik zawierający białka w konkretnych ramkach odczytu.</p>
-<p>TECH STACK: Python</p>
-<a id="$3-amino_acid_plots" class="tsd-anchor"></a><h2><a href="#$3-amino_acid_plots" style="color:inherit;text-decoration:none">3. amino_acid_plots</a></h2><p>Moduł implementujący interfejs umożliwiający wgląd w konkretne właściwości fizyczne białka, jak również interakcję z uzyskanymi wynikami(przybliżenie i przesuwanie wykresów). Ponadto zawiera on algorytmy obliczające właściwości fizyczne dla danego białka. Wyszczególniony moduł podzielony jest na dwa podmoduły:</p>
-<p>- <em>analysis_tools</em> – zawierający definicję algorytmów obliczających właściwości fizyczne</p>
-<p>- <em>plots_tools</em> – zawierający definicję algorytmów umożliwiających interakcje z wykresem</p>
-<p>TECH STACK: Python, PySide6, Matplotlib</p>
-<a id="$4-amino_acid_visualizer" class="tsd-anchor"></a><h2><a href="#$4-amino_acid_visualizer" style="color:inherit;text-decoration:none">4. amino_acid_visualizer</a></h2><p>Moduł generujący wizualizację białka, a także interfejs graficzny umożliwiający wgląd w jego dokładną strukturę. Zawiera on również algorytm obliczającą masę białka. Moduł generuje strukturę jako plik SVG, dzięki czemu użytkownik ma możliwość zapisu go na własnym urządzeniu.</p>
-<p>TECH STACK: Python, PySide6, Rdkit, Pickachu, Pickachu-Chem</p>
-<a id="$5-tests" class="tsd-anchor"></a><h2><a href="#$5-tests" style="color:inherit;text-decoration:none">5. tests</a></h2><p>Moduł odpowiedzialny za przeprowadzenie testów jednostkowych sprawdzających poprawność wykonywanej aplikacji.</p>
-<p>TECH STACK: Unittest</p>
-<a id="$autorzy" class="tsd-anchor"></a><h2><a href="#$autorzy" style="color:inherit;text-decoration:none">Autorzy</a></h2><ul>
-<li><a href="https://github.com/KubiO24">Jakub Kowal</a></li>
-<li><a href="https://github.com/majkelEXE">Michał Dubrowski</a></li>
-<li><a href="https://github.com/IgorBialek">Igor Białek</a></li>
-</ul>
-</div></div>
+<section class="tsd-panel-group tsd-index-group">
+<section class="tsd-panel tsd-index-panel">
+<h3 class="tsd-index-heading uppercase">Index</h3>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Modules</h3>
+<div class="tsd-index-list"><a href="modules/classes_cellSpritesData.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-4-path"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)" id="icon-4-text"></path></svg><span>classes/cell<wbr/>Sprites<wbr/>Data</span></a>
+<a href="modules/classes_exportedCellData.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>classes/exported<wbr/>Cell<wbr/>Data</span></a>
+<a href="modules/helpers_calcContainerDimens.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/calc<wbr/>Container<wbr/>Dimens</span></a>
+<a href="modules/helpers_contextMenu_actions_copyAction.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/context<wbr/>Menu/actions/copy<wbr/>Action</span></a>
+<a href="modules/helpers_contextMenu_actions_cutAction.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/context<wbr/>Menu/actions/cut<wbr/>Action</span></a>
+<a href="modules/helpers_contextMenu_actions_deleteAction.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/context<wbr/>Menu/actions/delete<wbr/>Action</span></a>
+<a href="modules/helpers_contextMenu_actions_loadAction.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/context<wbr/>Menu/actions/load<wbr/>Action</span></a>
+<a href="modules/helpers_contextMenu_actions_pasteAction.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/context<wbr/>Menu/actions/paste<wbr/>Action</span></a>
+<a href="modules/helpers_contextMenu_actions_redoAction.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/context<wbr/>Menu/actions/redo<wbr/>Action</span></a>
+<a href="modules/helpers_contextMenu_actions_saveAction.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/context<wbr/>Menu/actions/save<wbr/>Action</span></a>
+<a href="modules/helpers_contextMenu_actions_undoAction.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/context<wbr/>Menu/actions/undo<wbr/>Action</span></a>
+<a href="modules/helpers_contextMenu_generateContextMenu.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/context<wbr/>Menu/generate<wbr/>Context<wbr/>Menu</span></a>
+<a href="modules/helpers_ctrlListener.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/ctrl<wbr/>Listener</span></a>
+<a href="modules/helpers_drawing_drawCell.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/drawing/draw<wbr/>Cell</span></a>
+<a href="modules/helpers_drawing_drawCellTemporary.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/drawing/draw<wbr/>Cell<wbr/>Temporary</span></a>
+<a href="modules/helpers_drawing_redrawCells.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/drawing/redraw<wbr/>Cells</span></a>
+<a href="modules/helpers_mapGenerate_generateCell.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/map<wbr/>Generate/generate<wbr/>Cell</span></a>
+<a href="modules/helpers_mapGenerate_spritesItems_generateItems.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/map<wbr/>Generate/sprites<wbr/>Items/generate<wbr/>Items</span></a>
+<a href="modules/helpers_mapGenerate_spritesItems_generateItemsContainer.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/map<wbr/>Generate/sprites<wbr/>Items/generate<wbr/>Items<wbr/>Container</span></a>
+<a href="modules/helpers_mapGenerate_workArea_generateWorkArea.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/map<wbr/>Generate/work<wbr/>Area/generate<wbr/>Work<wbr/>Area</span></a>
+<a href="modules/helpers_mapGenerate_workArea_generateWorkAreaContainer.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/map<wbr/>Generate/work<wbr/>Area/generate<wbr/>Work<wbr/>Area<wbr/>Container</span></a>
+<a href="modules/helpers_shortcutListener.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>helpers/shortcut<wbr/>Listener</span></a>
+<a href="modules/interfaces_dimens.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>interfaces/dimens</span></a>
+<a href="modules/interfaces_drawCellInterface.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>interfaces/draw<wbr/>Cell<wbr/>Interface</span></a>
+<a href="modules/interfaces_exportedData.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>interfaces/exported<wbr/>Data</span></a>
+<a href="modules/interfaces_redrawCellInterface.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>interfaces/redraw<wbr/>Cell<wbr/>Interface</span></a>
+<a href="modules/interfaces_spriteData.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>interfaces/sprite<wbr/>Data</span></a>
+<a href="modules/items_history_historyEntity.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>items/history/history<wbr/>Entity</span></a>
+<a href="modules/items_history_historyItem.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>items/history/history<wbr/>Item</span></a>
+<a href="modules/main.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>main</span></a>
+<a href="modules/settings.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>settings</span></a>
+<a href="modules/store_cellsStore.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>store/cells<wbr/>Store</span></a>
+<a href="modules/store_copiedStore.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>store/copied<wbr/>Store</span></a>
+<a href="modules/store_genericStore.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>store/generic<wbr/>Store</span></a>
+<a href="modules/store_historyStore.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>store/history<wbr/>Store</span></a>
+<a href="modules/store_keyStore.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>store/key<wbr/>Store</span></a>
+<a href="modules/store_optionsStore.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>store/options<wbr/>Store</span></a>
+<a href="modules/store_selectedStore.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>store/selected<wbr/>Store</span></a>
+<a href="modules/vite_env.html" class="tsd-index-link tsd-kind-module"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>vite-<wbr/>env</span></a>
+</div></section></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -120,43 +71,9 @@
 <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
 <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
 <div class="tsd-theme-toggle">
-<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
-<details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary">
-<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg>On This Page</h3></summary>
-<div class="tsd-accordion-details">
-<ul>
-<li>
-<ul>
-<li><a href="#$bioinformatic-app"><span>Bioinformatic <wbr/>App</span></a></li>
-<li>
-<ul>
-<li><a href="#$instalacja"><span>Instalacja</span></a></li></ul></li>
-<li><a href="#$spis-treści"><span>Spis treści</span></a></li>
-<li><a href="#$i-wstęp"><span>&lt;strong&gt;<wbr/>I. <wbr/>Wstęp&lt;/strong&gt;</span></a></li>
-<li>
-<ul>
-<li><a href="#$1-podział-dokumentacji"><span>1. <wbr/>Podział dokumentacji</span></a></li>
-<li><a href="#$2-organizacja-pracy"><span>2. <wbr/>Organizacja pracy</span></a></li>
-<li><a href="#$3-proces-developmentu"><span>3. <wbr/>Proces developmentu</span></a></li>
-<li><a href="#$4-ogólne-spostrzeżenia"><span>4. <wbr/>Ogólne spostrzeżenia</span></a></li></ul></li>
-<li><a href="#$ii-funkcjonalnośc-aplikacji"><span>&lt;strong&gt;II. <wbr/>Funkcjonalnośc aplikacji&lt;/strong&gt;</span></a></li>
-<li>
-<ul>
-<li><a href="#$1-interfejs"><span>1. <wbr/>Interfejs</span></a></li>
-<li><a href="#$2-analiza-sekwencji"><span>2. <wbr/>Analiza sekwencji</span></a></li>
-<li><a href="#$3-wizualizacja-białka"><span>3. <wbr/>Wizualizacja białka</span></a></li>
-<li><a href="#$4-wykres-właściwości-fizycznych-białka"><span>4. <wbr/>Wykres właściwości fizycznych białka</span></a></li></ul></li>
-<li><a href="#$iii-struktura-aplikacji"><span>&lt;strong&gt;III. <wbr/>Struktura aplikacji&lt;/strong&gt;</span></a></li>
-<li>
-<ul>
-<li><a href="#$1-główna-architektura-aplikacji"><span>1. <wbr/>Główna architektura aplikacji</span></a></li>
-<li><a href="#$2-amino_acid_interpreter"><span>2. amino_<wbr/>acid_<wbr/>interpreter</span></a></li>
-<li><a href="#$3-amino_acid_plots"><span>3. amino_<wbr/>acid_<wbr/>plots</span></a></li>
-<li><a href="#$4-amino_acid_visualizer"><span>4. amino_<wbr/>acid_<wbr/>visualizer</span></a></li>
-<li><a href="#$5-tests"><span>5. tests</span></a></li>
-<li><a href="#$autorzy"><span>Autorzy</span></a></li></ul></li></ul></li></ul></div></details></div>
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div></div>
 <div class="site-menu">
-<nav class="tsd-navigation"><a href="index.html" class="current"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-4-path"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)" id="icon-4-text"></path></svg><span>Map generator</span></a>
+<nav class="tsd-navigation"><a href="index.html" class="current"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>Map generator</span></a>
 <ul class="tsd-small-nested-navigation">
 <li>
 <details class="tsd-index-accordion tsd-kind-module" data-key="classes/cellSpritesData"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg><a href="modules/classes_cellSpritesData.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4-path"></use><use href="#icon-4-text"></use></svg><span>classes/cell<wbr/>Sprites<wbr/>Data</span></a></summary>

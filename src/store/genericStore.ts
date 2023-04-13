@@ -1,3 +1,4 @@
+/** Stores actual spritesheet*/
 export default class GenericStore {
     static sprites: HTMLImageElement = document.createElement("img");
 

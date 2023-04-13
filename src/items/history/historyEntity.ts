@@ -1,7 +1,11 @@
 import CellsStore from "../../store/cellsStore";
 import HistoryItem from "./historyItem";
 
+/**
+ * Stores whole work area in particular moment
+ */
 export default class HistoryEntity {
+    /** Responsible for storing info about single cell*/
     historyItems: HistoryItem[];
 
     constructor() {

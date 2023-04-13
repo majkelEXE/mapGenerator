@@ -13,29 +13,29 @@ import { undoAction } from "./contextMenu/actions/undoAction";
  * @param e event containg data about clicked keys.
  */
 export const shortcutListener = (e: KeyboardEvent) => {
-    if (e.ctrlKey && e.key === "z") {
+    if ((e.ctrlKey || e.metaKey) && e.key === "z") {
         undoAction();
     }
-    if (e.ctrlKey && e.key === "y") {
+    if ((e.ctrlKey || e.metaKey) && e.key === "y") {
         redoAction();
     }
-    if (e.ctrlKey && e.key === "x") {
+    if ((e.ctrlKey || e.metaKey) && e.key === "x") {
         cutAction();
     }
-    if (e.ctrlKey && e.key === "c") {
+    if ((e.ctrlKey || e.metaKey) && e.key === "c") {
         copyAction();
     }
-    if (e.ctrlKey && e.key === "v") {
+    if ((e.ctrlKey || e.metaKey) && e.key === "v") {
         pasteAction();
     }
     if (e.key === "Delete") {
         deleteAction();
     }
-    if (e.ctrlKey && e.key === "s") {
+    if ((e.ctrlKey || e.metaKey) && e.key === "s") {
         e.preventDefault();
         saveAction();
     }
-    if (e.ctrlKey && e.key === "l") {
+    if ((e.ctrlKey || e.metaKey) && e.key === "l") {
         loadAction();
     }
 };

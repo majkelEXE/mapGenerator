@@ -1,9 +1,13 @@
 import CellSpritesData from "../classes/cellSpritesData";
 import Settings from "../settings";
 
+/** Clipboard of copied cells*/
 export class CopiedStore {
+    /** Count of copied columns*/
     static copiedColumnsCount: number = 0;
+    /** Count of copied rows*/
     static copiedRowsCount: number = 0;
+    /** Stores cells sprites data information*/
     static copiedCellsSpritesData: (CellSpritesData | null)[][] = [];
 
     static copyCells(cells: (HTMLCanvasElement | null)[]) {
